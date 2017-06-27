@@ -29,7 +29,7 @@ rename(
  */
 if ($argc > 1) {
     if (!@is_readable($argv[1])) {
-        echo 'Could not read the private key file:', $argv[1], "\n";
+        echo 'Could not read the private key file:', htmlspecialchars($argv[1], ENT_QUOTES), "\n";
         exit(255);
     }
     $pkeyFile = file_get_contents($argv[1]);
